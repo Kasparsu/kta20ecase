@@ -7,6 +7,8 @@ import Vue from 'vue/dist/vue.common.js';
 import Demo from './demo.vue';
 Vue.component('demo', Demo);
 
+window.eventBus = new Vue();
+
 let app = new Vue({
     el: '#app',
     data: {

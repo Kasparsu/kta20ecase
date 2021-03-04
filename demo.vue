@@ -9,34 +9,16 @@
       </div>
     </div>
     <h3 class="is-size-3">{{ reversed }}</h3>
-    <h1 class="is-size-1">All items</h1>
-    <ul>
-      <li v-for="item in items" :key="item.key">
-        <input type="checkbox" v-model="item.isDone">
-        {{ item.name }}
-      </li>
-    </ul>
-
-    <h1 class="is-size-1">Done items</h1>
-    <ul>
-      <li v-for="item in doneItems" :key="item.key">
-        <input type="checkbox" v-model="item.isDone">
-        {{ item.name }}
-      </li>
-    </ul>
-
-    <h1 class="is-size-1">Not Done items</h1>
-    <ul>
-      <li v-for="item in notDoneItems" :key="item.key">
-        <input type="checkbox" v-model="item.isDone">
-        {{ item.name }}
-      </li>
-    </ul>
+    <ItemList title="All Items" :items="items"></ItemList>
+    <ItemList title="Done Items" :items="doneItems"></ItemList>
+    <ItemList title="Not Done Items" :items="notDoneItems"></ItemList>
   </div>
 </template>
 
 <script>
+import ItemList from "./ItemList";
 export default {
+  components: {ItemList},
   props: [],
   data(){
     return {
